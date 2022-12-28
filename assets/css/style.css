@@ -20,6 +20,21 @@ ul {
   list-style: none;
 }
 
+.tools .main-text {
+  text-align: center;
+}
+.tools .main-text .main-title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 130%;
+  color: rgba(255, 255, 255, 0.9);
+}
+.tools .main-text .main-subtitle {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.55);
+}
 .tools .tools-list {
   margin-top: 110px;
   display: flex;
@@ -29,6 +44,11 @@ ul {
 .tools .tools-list .tool-item {
   width: calc(33.333% - 12.5px);
   transition: 0.6s;
+}
+@media (max-width: 1024px) {
+  .tools .tools-list .tool-item {
+    width: 50%;
+  }
 }
 .tools .tools-list .tool-item:hover {
   transform: translate(0%, -15%);
@@ -41,16 +61,20 @@ ul {
   color: #fff;
   position: relative;
 }
+@media (max-width: 768px) {
+  .tools .tools-list .tool-item .tool {
+    width: 100%;
+  }
+}
 .tools .tools-list .tool-item .tool-wrap {
   padding: 33px;
   border-radius: 15px;
 }
-.tools .tools-list .tool-item .tool-bg {
-  padding: 33px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 15px;
-  z-index: -1;
+.tools .tools-list .tool-item .tool-wrap::before {
+  background: rgba(0, 0, 0, 0.06);
   opacity: 0;
+  display: block;
+  min-width: 100%;
 }
 .tools .tools-list .tool-item .tool::after {
   content: "";
@@ -63,7 +87,7 @@ ul {
   position: absolute;
   top: -6px;
   right: 16px;
-  z-index: -3;
+  z-index: -2;
   opacity: 0;
 }
 .tools .tools-list .tool-item .tool::before {
@@ -74,7 +98,7 @@ ul {
   bottom: 0;
   left: 0;
   opacity: 0;
-  z-index: -2;
+  z-index: -1;
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
   background: linear-gradient(55deg, rgba(40, 48, 54, 0.4) 0%, rgba(0, 0, 0, 0) 60%, rgba(40, 48, 54, 0.4) 100%);
@@ -85,7 +109,7 @@ ul {
 .tools .tools-list .tool-item .tool:hover::after {
   opacity: 1;
 }
-.tools .tools-list .tool-item .tool:hover-bg::before {
+.tools .tools-list .tool-item .tool:hover-wrap::before {
   opacity: 1;
 }
 .tools .tools-list .tool-item .tool-head {
@@ -151,11 +175,11 @@ ul {
   line-height: 24px;
   border-radius: 8px;
   text-align: center;
+  transition: background 0.7s, color 0.7s;
 }
 .tools .tools-list .tool-item .tool-footer .visit:hover {
   background: #FF6E30;
   color: #FFFFFF;
-  transition: all 0.7s;
 }
 .tools .bg:hover {
   background: #FF6E30;

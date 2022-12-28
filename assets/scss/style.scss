@@ -42,6 +42,21 @@
     
     
     .tools{
+        .main-text{
+            text-align: center;
+            .main-title{
+                font-weight: 500;
+                font-size: 48px;
+                line-height: 130%;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .main-subtitle{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 30px;
+                color: rgba(255, 255, 255, 0.55);
+            }
+        }
         .tools-list{
             margin-top: 110px;
             display: flex;
@@ -50,6 +65,10 @@
             .tool-item{
                 width: calc(33.333% - 12.5px);
                 transition: .6s;
+                @media (max-width: 1024px){
+
+                    width: 50%;
+                }
 
                 &:hover {
                     transform: translate( 0%, -15%);
@@ -62,10 +81,19 @@
                     overflow: hidden;
                     color: #fff;
                     position: relative;
+                    @media (max-width: 768px){
+
+                        width: 100%;
+                    }
                     &-wrap {
                         padding: 33px;
-                        background: rgba(0, 0, 0, .08);
                         border-radius: 15px;
+                        &::before{
+                            background: rgba(0, 0, 0, .06);
+                            opacity: 0;
+                            display: block;
+                            min-width: 100%;
+                        }
                         
                     }
         
@@ -186,12 +214,11 @@
                             line-height: 24px;
                             border-radius: 8px;
                             text-align: center;
+                            transition: background 0.7s, color 0.7s;
     
                             &:hover{
                                 background: #FF6E30;
                                 color: #FFFFFF;
-                                transition: all 0.7s;
-                                ;
                             }
                         }
                     }
