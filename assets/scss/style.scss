@@ -198,11 +198,15 @@
                                 background: transparent;
                                 border: none;
                                 padding: 7px;
+
+                                svg path{
+                                    transition: all 0.7s;
+
+                                }
                 
                                 &:hover svg path{
                                     fill: #FD3B41;
                                     fill-opacity: 1;
-                                    transition: all 0.7s;
                                 }
                             }
                         }
