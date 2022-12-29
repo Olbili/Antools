@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -43,14 +44,8 @@ ul {
 }
 .tools .tools-list .tool-item .tool-wrap {
   padding: 33px;
-  border-radius: 15px;
-}
-.tools .tools-list .tool-item .tool-bg {
-  padding: 33px;
   background: rgba(0, 0, 0, 0.08);
   border-radius: 15px;
-  z-index: -1;
-  opacity: 0;
 }
 .tools .tools-list .tool-item .tool::after {
   content: "";
@@ -63,7 +58,7 @@ ul {
   position: absolute;
   top: -6px;
   right: 16px;
-  z-index: -3;
+  z-index: -2;
   opacity: 0;
 }
 .tools .tools-list .tool-item .tool::before {
@@ -74,7 +69,7 @@ ul {
   bottom: 0;
   left: 0;
   opacity: 0;
-  z-index: -2;
+  z-index: -1;
   -webkit-backdrop-filter: blur(25px);
           backdrop-filter: blur(25px);
   background: linear-gradient(55deg, rgba(40, 48, 54, 0.4) 0%, rgba(0, 0, 0, 0) 60%, rgba(40, 48, 54, 0.4) 100%);
@@ -85,7 +80,7 @@ ul {
 .tools .tools-list .tool-item .tool:hover::after {
   opacity: 1;
 }
-.tools .tools-list .tool-item .tool:hover-bg::before {
+.tools .tools-list .tool-item .tool:hover-wrap::before {
   opacity: 1;
 }
 .tools .tools-list .tool-item .tool-head {
@@ -170,10 +165,6 @@ ul {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0);
 }
-.tools .hz .bg {
-  width: 100%;
-  border-radius: 8px;
-}
 .tools .hz .button {
   text-decoration: none;
   color: #FF6E30;
@@ -228,11 +219,50 @@ ul {
 }
 
 .team {
-  width: 1224px;
   margin: 0 auto;
+  position: relative;
 }
 .team__item {
   display: flex;
-  align-items: flex-start;
   background-color: #1E252B;
+  align-items: center;
+  justify-content: center;
+}
+.team__item-img {
+  width: 42%;
+  position: relative;
+}
+.team__item-text {
+  padding: 0 22px;
+  position: absolute;
+  bottom: 32px;
+  left: 300px;
+  background: rgba(40, 48, 54, 0.1);
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  border-radius: 8px;
+  word-spacing: 4px;
+}
+.team__item-text h3 {
+  margin-top: 10px;
+  margin-bottom: 2px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.team__item-text p {
+  margin-bottom: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgba(255, 253, 253, 0.5490196078);
+}
+.team__item-caption {
+  width: 30%;
+  font-family: "Roboto", sans-serif;
+}
+.team .carousel-indicators {
+  position: absolute;
+  top: 570px;
+}
+.team .carousel-indicators button:enabled {
+  background-color: #FF6E30;
 }
